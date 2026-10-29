@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <title>BrooksByers Games</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; }
+    body { background: #111; overflow: hidden; font-family: Arial, sans-serif; }
+    #original-site { display: block; width: 100%; height: 100%; border: 0; background: #111; }
+    #fallback {
+      display: none; position: fixed; inset: 0; z-index: 2;
+      align-items: center; justify-content: center; padding: 24px;
+      text-align: center; color: #fff; background: #111;
+    }
+    #fallback a { color: #9ecbff; }
+    #fallback p { max-width: 520px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <iframe
+    id="original-site"
+    src="https://ubg-42-githubio--brooksbyers.replit.app/"
+    title="Original BrooksByers Games website"
+    allow="fullscreen; autoplay; gamepad"
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
+  <main id="fallback">
+    <div>
+      <h1>BrooksByers Games</h1>
+      <p>Your original website does not allow itself to be displayed inside this GitHub Pages frame. Open the original website directly using the button below, or upload the original project files from Replit to convert the real source code.</p>
+      <p><a href="https://ubg-42-githubio--brooksbyers.replit.app/" target="_blank" rel="noopener noreferrer">Open original BrooksByers Games</a></p>
+    </div>
+  </main>
+  <script>
+    // The browser does not expose whether a cross-origin page blocked framing.
+    // Keep the original site as the page itself; use the fallback only if loading errors.
+    const frame = document.getElementById('original-site');
+    frame.addEventListener('error', () => {
+      document.getElementById('fallback').style.display = 'flex';
+    });
+  </script>
+</body>
+</html>
